@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteMe", "DeleteMe\DeleteMe.csproj", "{F89AAA07-3EC3-4380-988A-26C876612FEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefineInterfaceIPerson", "DefineInterfaceIPerson\DefineInterfaceIPerson.csproj", "{821A7BBE-6022-4420-8BC4-8B8129FD89DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F89AAA07-3EC3-4380-988A-26C876612FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89AAA07-3EC3-4380-988A-26C876612FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89AAA07-3EC3-4380-988A-26C876612FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89AAA07-3EC3-4380-988A-26C876612FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{821A7BBE-6022-4420-8BC4-8B8129FD89DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821A7BBE-6022-4420-8BC4-8B8129FD89DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821A7BBE-6022-4420-8BC4-8B8129FD89DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821A7BBE-6022-4420-8BC4-8B8129FD89DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
