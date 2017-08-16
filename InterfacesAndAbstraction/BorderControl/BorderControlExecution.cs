@@ -2,13 +2,14 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
+    using System.Globalization;
+    using System.Linq;
 
     class BorderControlExecution
     {
         static void Main(string[] args)
         {
-            var inhabitants = new List<IIdentifiable>();
+            var inhabitants = new List<IBirthdate>();
 
             while (true)
             {
@@ -23,46 +24,45 @@
                 AddInhiabitant(inhabitants, input);
             }
 
-            var fakeId = Console.ReadLine();
-            StringBuilder rebelionsId = ExtractRebelionsId(inhabitants, fakeId);
+            var searchedYear = Console.ReadLine();
 
-            PrintIdsForDetaining(rebelionsId);
-        }
-
-        private static StringBuilder ExtractRebelionsId(List<IIdentifiable> inhabitants, string fakeId)
-        {
-            var rebelionsId = new StringBuilder();
-            foreach (var inhab in inhabitants)
+            foreach (var inhabitant in inhabitants)
             {
-                var lastDigits = inhab.Id.Substring(inhab.Id.Length - fakeId.Length);
+                var birthYear = inhabitant.DateOfBirth.Split('/').Last();
 
-                if (lastDigits == fakeId)
+                if (birthYear == searchedYear)
                 {
-                    rebelionsId.AppendLine(inhab.Id);
+                    Console.WriteLine(inhabitant.DateOfBirth);
                 }
             }
-
-            return rebelionsId;
         }
 
-        private static void PrintIdsForDetaining(StringBuilder rebelionsId)
-        {
-            Console.WriteLine(rebelionsId.ToString().TrimEnd());
-        }
-
-        private static void AddInhiabitant(List<IIdentifiable> inhabitats, string input)
+        private static void AddInhiabitant(List<IBirthdate> inhabitats, string input)
         {
             var splitInput = input.Split();
 
-            if (splitInput.Length == 2)
+            //var isRobot = splitInput[0].Equals("Robot", StringComparison.OrdinalIgnoreCase);
+            var isCitizen = splitInput[0].Equals("Citizen", StringComparison.OrdinalIgnoreCase);
+            var isPet = splitInput[0].Equals("Pet", StringComparison.OrdinalIgnoreCase);
+
+            //if (isRobot)
+            //{
+            //    var inputRobot = new Robot(splitInput[1], splitInput[2]);
+            //}
+
+            if (isCitizen)
             {
-                IIdentifiable inputRobot = new Robot(splitInput[0], splitInput[1]);
-                inhabitats.Add(inputRobot);
-            }
-            else if (splitInput.Length == 3)
-            {
-                var inputCitizen = new Citizen(splitInput[0], splitInput[1], splitInput[2]);
+                var inputCitizen = new Citizen(splitInput[1], splitInput[2], splitInput[3], splitInput[4]);
                 inhabitats.Add(inputCitizen);
+            }
+            else if (isPet)
+            {
+                var inputPet = new Pet(splitInput[1], splitInput[2]);
+                inhabitats.Add(inputPet);
+            }
+            else
+            {
+                // undefined
             }
         }
     }

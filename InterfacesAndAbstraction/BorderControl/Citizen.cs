@@ -2,18 +2,22 @@
 {
     using System;
 
-    public class Citizen : IIdentifiable
+    public class Citizen : IIdentifiable, IBirthdate, IName
     {
-        private string name;
         private string age;
 
-        public Citizen (string name, string age, string id)
+        public Citizen (string name, string age, string id, string dateOfBirth)
         {
-            this.name = name;
             this.age = age;
+            this.Name = name;
             this.Id = id;
+            this.DateOfBirth = dateOfBirth;
         }
 
         public string Id { get; }
+
+        public string DateOfBirth { get; }
+
+        public string Name { get; }
     }
 }
