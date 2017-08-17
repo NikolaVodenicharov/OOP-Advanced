@@ -9,8 +9,17 @@
     {
         static void Main(string[] args)
         {
-            var inhabitants = new List<IBirthdate>();
+            var humans = new Dictionary<string, IBuyer>();
+            int inputHumanNumber = ReadInputHumanNumber();
+            ReadFromConsoleAddToHumans(humans, inputHumanNumber);
+            ReadFromConsolePurhaseFood(humans);
 
+            var purchasedFood = humans.Sum(x => x.Value.Food);
+            Console.WriteLine(purchasedFood);
+        }
+
+        private static void ReadFromConsolePurhaseFood(Dictionary<string, IBuyer> humans)
+        {
             while (true)
             {
                 var input = Console.ReadLine();
@@ -21,49 +30,44 @@
                     break;
                 }
 
-                AddInhiabitant(inhabitants, input);
-            }
-
-            var searchedYear = Console.ReadLine();
-
-            foreach (var inhabitant in inhabitants)
-            {
-                var birthYear = inhabitant.DateOfBirth.Split('/').Last();
-
-                if (birthYear == searchedYear)
+                if (humans.ContainsKey(input))
                 {
-                    Console.WriteLine(inhabitant.DateOfBirth);
+                    humans[input].BuyFood();
                 }
             }
         }
 
-        private static void AddInhiabitant(List<IBirthdate> inhabitats, string input)
+        private static void ReadFromConsoleAddToHumans(Dictionary<string, IBuyer> humans, int inputHumanNumber)
         {
-            var splitInput = input.Split();
-
-            //var isRobot = splitInput[0].Equals("Robot", StringComparison.OrdinalIgnoreCase);
-            var isCitizen = splitInput[0].Equals("Citizen", StringComparison.OrdinalIgnoreCase);
-            var isPet = splitInput[0].Equals("Pet", StringComparison.OrdinalIgnoreCase);
-
-            //if (isRobot)
-            //{
-            //    var inputRobot = new Robot(splitInput[1], splitInput[2]);
-            //}
-
-            if (isCitizen)
+            for (int i = 0; i < inputHumanNumber; i++)
             {
-                var inputCitizen = new Citizen(splitInput[1], splitInput[2], splitInput[3], splitInput[4]);
-                inhabitats.Add(inputCitizen);
+                var input = Console.ReadLine().Split();
+
+                if (input.Length == 4)
+                {
+                    var citizen = new Citizen(input[0], input[1], input[2], input[3]);
+                    humans[input[0]] = citizen;
+                }
+                else if (input.Length == 3)
+                {
+                    var rebel = new Rebel(input[0], input[1], input[2]);
+                    humans[input[0]] = rebel;
+                }
+                else
+                {
+                    // Invalid input, just skip it.
+                }
             }
-            else if (isPet)
-            {
-                var inputPet = new Pet(splitInput[1], splitInput[2]);
-                inhabitats.Add(inputPet);
-            }
-            else
-            {
-                // undefined
-            }
+        }
+
+        private static int ReadInputHumanNumber()
+        {
+            var inputHumanNumber = 0;
+
+            var input = Console.ReadLine();
+            int.TryParse(input, out inputHumanNumber);
+
+            return inputHumanNumber;
         }
     }
 }

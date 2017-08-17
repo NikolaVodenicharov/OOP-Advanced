@@ -1,7 +1,9 @@
 ﻿namespace BorderControl
 {
-    interface IName
+    interface IHuman
     {
         string Name { get; }
+
+        string Age { get; }
     }
 }
