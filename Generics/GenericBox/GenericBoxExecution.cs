@@ -7,17 +7,17 @@
     {
         public static void Main()
         {
-            var lines = new List<Box<string>>();
+            var lines = new List<Box<double>>();
 
             var inputLinesNumber = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < inputLinesNumber; i++)
             {
-                var line = new Box<string>(Console.ReadLine());
+                var line = new Box<double>(double.Parse(Console.ReadLine()));
                 lines.Add(line);
             }
 
-            var comparedLine = Console.ReadLine();
+            var comparedLine = double.Parse(Console.ReadLine());
 
             Console.WriteLine(CounterOfBigger(lines, comparedLine));
         }
