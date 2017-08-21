@@ -1,5 +1,7 @@
-﻿namespace GenericBox
-{
+﻿
+    using System;
+    using System.Collections.Generic;
+
     public class Box<T>
     {
         public Box(T data)
@@ -16,4 +18,4 @@
             return output;
         }
     }
-}
+

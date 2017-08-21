@@ -1,5 +1,4 @@
-﻿namespace GenericBox
-{
+﻿
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -8,28 +7,37 @@
     {
         public static void Main()
         {
-            var lines = new List<Box<int>>();
+            var lines = new List<Box<string>>();
 
             var inputLinesNumber = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < inputLinesNumber; i++)
             {
-                var line = new Box<int>(int.Parse(Console.ReadLine()));
+                var line = new Box<string>(Console.ReadLine());
                 lines.Add(line);
             }
 
-            var inputIndexes = Console.ReadLine().Split().Select(int.Parse).ToArray();
-            var index1 = inputIndexes[0];
-            var index2 = inputIndexes[1];
+            var comparedLine = Console.ReadLine();
 
-            var temporary = lines[index1];
-            lines[index1] = lines[index2];
-            lines[index2] = temporary;
+            Console.WriteLine(CounterOfBigger(lines, comparedLine));
+        }
 
-            foreach (var str in lines)
+
+        public static int CounterOfBigger<T> 
+            (List<Box<T>> lines, T comparedLine)
+            where T : IComparable
+        {
+            var counter = 0;
+
+            foreach (var line in lines)
             {
-                Console.WriteLine(str);
+                if (line.Data.CompareTo(comparedLine) > 0)
+                {
+                    counter++;
+                }
             }
+
+            return counter;
         }
     }
-}
+
