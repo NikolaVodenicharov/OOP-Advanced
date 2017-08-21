@@ -10,7 +10,7 @@
 
             for (int i = 0; i < inputLinesNumber; i++)
             {
-                var str = new Box<string>(Console.ReadLine());
+                var str = new Box<int>(int.Parse(Console.ReadLine()));
 
                 Console.WriteLine(str);
             }
