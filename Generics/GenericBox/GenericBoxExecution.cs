@@ -8,13 +8,13 @@
     {
         public static void Main()
         {
-            var lines = new List<Box<string>>();
+            var lines = new List<Box<int>>();
 
             var inputLinesNumber = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < inputLinesNumber; i++)
             {
-                var line = new Box<string>(Console.ReadLine());
+                var line = new Box<int>(int.Parse(Console.ReadLine()));
                 lines.Add(line);
             }
 
