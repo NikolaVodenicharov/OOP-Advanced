@@ -1,4 +1,5 @@
-﻿
+﻿namespace LibraryExercices
+{
     using System;
 
     public class LibraryExecution
@@ -18,4 +19,4 @@
             }
         }
     }
-
+}

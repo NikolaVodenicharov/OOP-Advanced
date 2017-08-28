@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteMe", "DeleteMe\DeleteMe.csproj", "{8CB2E6DD-C00B-4319-B0D0-93706AB367B1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryExercices", "Library\LibraryExercices.csproj", "{F0910B10-DF7C-4762-9D4E-0A84DA7CE303}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8CB2E6DD-C00B-4319-B0D0-93706AB367B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CB2E6DD-C00B-4319-B0D0-93706AB367B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CB2E6DD-C00B-4319-B0D0-93706AB367B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CB2E6DD-C00B-4319-B0D0-93706AB367B1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F0910B10-DF7C-4762-9D4E-0A84DA7CE303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F0910B10-DF7C-4762-9D4E-0A84DA7CE303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0910B10-DF7C-4762-9D4E-0A84DA7CE303}.Release|Any CPU.ActiveCfg = Release|Any CPU
