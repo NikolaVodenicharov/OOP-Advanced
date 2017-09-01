@@ -1,4 +1,4 @@
-﻿namespace LibraryExercices
+﻿namespace Library
 {
     using System;
     using System.Collections;
@@ -6,7 +6,7 @@
 
     public class Library : IEnumerable<Book>
     {
-        public Library (params Book[] books)
+        public Library(params Book[] books)
         {
             this.Books = new List<Book>(books);
         }
@@ -27,7 +27,7 @@
             public readonly List<Book> books;
             public int currentIndex;
 
-            public LibraryIterator (IEnumerable<Book> books)
+            public LibraryIterator(IEnumerable<Book> books)
             {
                 this.Reset();
                 this.books = new List<Book>(books);
@@ -44,7 +44,7 @@
 
             object IEnumerator.Current => this.Current;
 
-            public void Dispose() {}
+            public void Dispose() { }
 
             public bool MoveNext()
             {

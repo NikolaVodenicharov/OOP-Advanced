@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryExercices", "Library\LibraryExercices.csproj", "{F0910B10-DF7C-4762-9D4E-0A84DA7CE303}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListyIterator", "ListyIterator\ListyIterator.csproj", "{99121763-46C0-47F1-82DE-1CA33EAFF75B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F0910B10-DF7C-4762-9D4E-0A84DA7CE303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0910B10-DF7C-4762-9D4E-0A84DA7CE303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0910B10-DF7C-4762-9D4E-0A84DA7CE303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99121763-46C0-47F1-82DE-1CA33EAFF75B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99121763-46C0-47F1-82DE-1CA33EAFF75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99121763-46C0-47F1-82DE-1CA33EAFF75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99121763-46C0-47F1-82DE-1CA33EAFF75B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

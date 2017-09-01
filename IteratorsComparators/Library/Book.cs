@@ -1,11 +1,11 @@
-﻿namespace LibraryExercices
+﻿namespace Library
 {
     using System;
     using System.Collections.Generic;
 
     public class Book : IComparable<Book>
     {
-        public Book (string title, int year, params string[] authors)
+        public Book(string title, int year, params string[] authors)
         {
             this.Title = title;
             this.Year = year;
