@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericScale", "GenericScal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericBox", "GenericBox\GenericBox.csproj", "{5EA96EF1-80C6-4372-934B-7F8A6049E6D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListExercices", "CustomListExercices\CustomListExercices.csproj", "{C3FEE41F-DFF3-40DC-AF03-6B998FB2A05B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5EA96EF1-80C6-4372-934B-7F8A6049E6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EA96EF1-80C6-4372-934B-7F8A6049E6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EA96EF1-80C6-4372-934B-7F8A6049E6D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3FEE41F-DFF3-40DC-AF03-6B998FB2A05B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3FEE41F-DFF3-40DC-AF03-6B998FB2A05B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3FEE41F-DFF3-40DC-AF03-6B998FB2A05B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3FEE41F-DFF3-40DC-AF03-6B998FB2A05B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

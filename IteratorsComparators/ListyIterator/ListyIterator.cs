@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
-public class ListyIterator<T>
+public class ListyIterator<T> : IEnumerable<T>
 {
     private const int step = 1;
 
@@ -40,4 +42,11 @@ public class ListyIterator<T>
     {
         return (this.index + step) < this.Elements.Count;
     }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        throw new NotImplementedException();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 }
