@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 
 public class ListyIterator<T> : IEnumerable<T>
 {
@@ -38,6 +39,19 @@ public class ListyIterator<T> : IEnumerable<T>
         return "Invalid Operation!";
     }
 
+    public string PrintAll()
+    {
+        StringBuilder output = new StringBuilder();
+
+        foreach (var element in this.Elements)
+        {
+            output.Append(element)
+                  .Append(" ");
+        }
+
+        return output.ToString().TrimEnd();
+    }
+
     public bool HasNext()
     {
         return (this.index + step) < this.Elements.Count;
@@ -45,7 +59,10 @@ public class ListyIterator<T> : IEnumerable<T>
 
     public IEnumerator<T> GetEnumerator()
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < this.elements.Count; i++)
+        {
+            yield return this.elements[i];
+        }
     }
 
     IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();

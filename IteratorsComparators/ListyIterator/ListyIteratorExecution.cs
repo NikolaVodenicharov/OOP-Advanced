@@ -24,9 +24,12 @@ public class ListyIteratorExecution
                 case "HasNext":
                     Console.WriteLine(elements.HasNext());
                     break;
+                case "PrintAll":
+                    Console.WriteLine(elements.PrintAll());
+                    break;
                 case "END":
                     isContinue = false;
-                    break;
+                    break;   
             }
         }
     }
