@@ -1,5 +1,4 @@
-﻿namespace CoffeMachine
-{
+﻿
     using System;
 
     public class CoffeMachineExecution
@@ -36,4 +35,4 @@
 
         }
     }
-}
+

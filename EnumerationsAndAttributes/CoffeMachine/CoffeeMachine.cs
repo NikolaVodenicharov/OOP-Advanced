@@ -1,5 +1,4 @@
-﻿namespace CoffeMachine
-{
+﻿
     using System;
     using System.Collections.Generic;
 
@@ -39,4 +38,4 @@
             this.coins.Add(coin);
         }
     }
-}
+

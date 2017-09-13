@@ -1,5 +1,4 @@
-﻿namespace CoffeMachine
-{
+﻿
     public enum Coin
     {
        One = 1,
@@ -9,4 +8,4 @@
        Twenty = 20,
        Fifty = 50
     }
-}
+
