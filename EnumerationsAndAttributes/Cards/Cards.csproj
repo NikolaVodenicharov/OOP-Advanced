@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardRank.cs" />
     <Compile Include="CardsExecution.cs" />
     <Compile Include="CardSuit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
