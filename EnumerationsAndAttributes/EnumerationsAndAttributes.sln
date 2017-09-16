@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weekdays", "Weekdays\Weekda
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeMachine", "CoffeMachine\CoffeMachine.csproj", "{FC6100D2-377F-4D3A-944C-CDC34614276F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cards", "Cards\Cards.csproj", "{EBB6865A-4DE9-49CE-AB07-8BC91F846BC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FC6100D2-377F-4D3A-944C-CDC34614276F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC6100D2-377F-4D3A-944C-CDC34614276F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC6100D2-377F-4D3A-944C-CDC34614276F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB6865A-4DE9-49CE-AB07-8BC91F846BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB6865A-4DE9-49CE-AB07-8BC91F846BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB6865A-4DE9-49CE-AB07-8BC91F846BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB6865A-4DE9-49CE-AB07-8BC91F846BC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
