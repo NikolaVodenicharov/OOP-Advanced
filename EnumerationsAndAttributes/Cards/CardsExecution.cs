@@ -7,7 +7,7 @@
     {
         public static void Main()
         {
-            PrintCardRank();
+            PrintCardPower();
         }
 
         public static void PrintCardSuit()
@@ -42,6 +42,16 @@
             }
 
             Console.WriteLine(output.ToString().TrimEnd());
+        }
+
+        public static void PrintCardPower()
+        {
+            var cardRank = Console.ReadLine();
+            var cardSuit = Console.ReadLine();
+
+            var card = new Card(cardRank, cardSuit);
+
+            Console.WriteLine(card);
         }
     }
 }
