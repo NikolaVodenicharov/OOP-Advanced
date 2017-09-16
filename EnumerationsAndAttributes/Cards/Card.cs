@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class Card
+    public class Card : IComparable<Card>
     {
         public Card(string rank, string suit)
         {
@@ -12,6 +12,31 @@
 
         public CardRank Rank { get; set; }
         public CardSuit Suit { get; set; }
+
+        public int CompareTo(Card other)
+        {
+            int result = 0;
+
+            if (ReferenceEquals(this, other))
+            {
+                result = 0;
+            }
+            else if (ReferenceEquals(null, other))
+            {
+                result = 1;
+            }
+            else
+            {
+                result = this.Rank.CompareTo(other.Rank);
+
+                if (result == 0)
+                {
+                    result = this.Suit.CompareTo(other.Suit);
+                }
+            }
+
+            return result;
+        }
 
         public int Power()
         {

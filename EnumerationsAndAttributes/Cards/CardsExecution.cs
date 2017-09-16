@@ -7,7 +7,7 @@
     {
         public static void Main()
         {
-            PrintCardPower();
+            CompareCards();
         }
 
         public static void PrintCardSuit()
@@ -46,12 +46,33 @@
 
         public static void PrintCardPower()
         {
+            var card = ReadCard();
+
+            Console.WriteLine(card);
+        }
+
+        public static Card ReadCard()
+        {
             var cardRank = Console.ReadLine();
             var cardSuit = Console.ReadLine();
 
             var card = new Card(cardRank, cardSuit);
+            return card;
+        }
 
-            Console.WriteLine(card);
+        public static void CompareCards()
+        {
+            var card1 = ReadCard();
+            var card2 = ReadCard();
+
+            if (card1.CompareTo(card2) > 0)
+            {
+                Console.WriteLine(card1);
+            }
+            else
+            {
+                Console.WriteLine(card2);
+            }
         }
     }
 }
