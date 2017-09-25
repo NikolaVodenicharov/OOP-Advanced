@@ -8,30 +8,31 @@
         public static void Main()
         {
             // CompareCards(); for Problem 5.Card CompareTo()
-
-            ReadCustomAttribute();
-
+            //ReadCustomAttribute(); for Problem 6.Custom Enum Attribute
+            PrintCustomAttributes(ReadCustomAttribute());
         }
 
-        public static void ReadCustomAttribute()
+
+
+        public static Type ReadCustomAttribute()
         {
             var input = Console.ReadLine();
 
             if (input == "Rank")
             {
-                PrintCustomAttribute(typeof(CardRank));
+                return typeof(CardRank);
             }
             else if(input == "Suit")
             {
-                PrintCustomAttribute(typeof(CardSuit));
+                return typeof(CardSuit);
             }
             else
             {
-                // invalid input
+                throw new ArgumentException("Invalid data");
             }
         }
 
-        public static void PrintCustomAttribute(Type type)
+        public static void PrintCustomAttributes(Type type)
         {
             var attributes = type.GetCustomAttributes(false);
 
