@@ -2,17 +2,50 @@
 {
     using System;
     using System.Text;
+    using System.Collections.Generic;
 
     public class CardsExecution
     {
         public static void Main()
         {
             // CompareCards(); for Problem 5.Card CompareTo()
-            //ReadCustomAttribute(); for Problem 6.Custom Enum Attribute
-            PrintCustomAttributes(ReadCustomAttribute());
+            // PrintCustomAttributes(ReadCustomAttribute()); for Problem 6.Custom Enum Attribute
+            var input = Console.ReadLine();
+            PrintCardDeck(CreateCardDeck());
         }
 
+        public static ICollection<Card> CreateCardDeck()
+        {
+            var cardDeck = new List<Card>(52);
 
+            var suits = Enum.GetValues(typeof(CardSuit));
+            var ranks = Enum.GetValues(typeof(CardRank));
+
+            foreach (var suit in suits)
+            {
+                foreach (var rank in ranks)
+                {
+                    var card = new Card(rank.ToString(), suit.ToString());
+                    cardDeck.Add(card);
+                }
+            }
+
+            return cardDeck;
+        }
+
+        public static void PrintCardDeck(ICollection<Card> cardDeck)
+        {
+            var sb = new StringBuilder();
+
+            foreach (var card in cardDeck)
+            {
+                sb.AppendLine(card.CardName());
+            }
+
+            var output = sb.ToString().TrimEnd();
+
+            Console.WriteLine(output);
+        }
 
         public static Type ReadCustomAttribute()
         {

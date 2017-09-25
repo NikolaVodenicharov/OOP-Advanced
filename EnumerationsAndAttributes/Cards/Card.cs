@@ -47,9 +47,15 @@
             return power;
         }
 
+        public string CardName()
+        {
+            var output = $"{this.Rank} of {this.Suit}";
+            return output;
+        }
+
         public override string ToString()
         {
-            var output = $"Card name: {this.Rank} of {this.Suit}; Card power: {this.Power()}";
+            var output = $"Card name: {CardName()}; Card power: {this.Power()}";
             return output;
         }
     }
