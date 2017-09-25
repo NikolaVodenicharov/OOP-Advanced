@@ -7,7 +7,38 @@
     {
         public static void Main()
         {
-            CompareCards();
+            // CompareCards(); for Problem 5.Card CompareTo()
+
+            ReadCustomAttribute();
+
+        }
+
+        public static void ReadCustomAttribute()
+        {
+            var input = Console.ReadLine();
+
+            if (input == "Rank")
+            {
+                PrintCustomAttribute(typeof(CardRank));
+            }
+            else if(input == "Suit")
+            {
+                PrintCustomAttribute(typeof(CardSuit));
+            }
+            else
+            {
+                // invalid input
+            }
+        }
+
+        public static void PrintCustomAttribute(Type type)
+        {
+            var attributes = type.GetCustomAttributes(false);
+
+            foreach (var attribute in attributes)
+            {
+                Console.WriteLine(attribute);
+            }
         }
 
         public static void PrintCardSuit()
