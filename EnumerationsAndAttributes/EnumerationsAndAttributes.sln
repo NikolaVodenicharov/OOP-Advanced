@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeMachine", "CoffeMachin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cards", "Cards\Cards.csproj", "{EBB6865A-4DE9-49CE-AB07-8BC91F846BC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateAttributes", "CreateAttributes\CreateAttributes.csproj", "{B8F10BA1-B201-4C61-8AB6-1487C734D295}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EBB6865A-4DE9-49CE-AB07-8BC91F846BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB6865A-4DE9-49CE-AB07-8BC91F846BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB6865A-4DE9-49CE-AB07-8BC91F846BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8F10BA1-B201-4C61-8AB6-1487C734D295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8F10BA1-B201-4C61-8AB6-1487C734D295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8F10BA1-B201-4C61-8AB6-1487C734D295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8F10BA1-B201-4C61-8AB6-1487C734D295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
