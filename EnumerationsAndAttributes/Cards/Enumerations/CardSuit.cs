@@ -1,11 +1,13 @@
 ﻿namespace Cards
 {
+    using System;
+
     [Type("Enumeration", "Suit", "Provides suit constants for a Card class")]
     public enum CardSuit
     {
-        Clubs,
-        Hearts,
-        Diamonds,
-        Spades
+        Clubs = 0,
+        Diamonds = 13,
+        Hearts = 26,
+        Spades = 39
     }
 }

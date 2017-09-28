@@ -13,6 +13,14 @@
         public CardRank Rank { get; set; }
         public CardSuit Suit { get; set; }
 
+        public int CalculatePower()
+        {
+            var power = 0;
+            power += (int)Rank;
+            power += (int)Suit;
+
+            return power;
+        }
         public int CompareTo(Card other)
         {
             int result = 0;
@@ -27,36 +35,34 @@
             }
             else
             {
-                result = this.Rank.CompareTo(other.Rank);
-
-                if (result == 0)
-                {
-                    result = this.Suit.CompareTo(other.Suit);
-                }
+                result = this.CalculatePower().CompareTo(other.CalculatePower());
             }
 
             return result;
         }
-
-        public int Power()
-        {
-            var power = 0;
-            power += (int)Rank;
-            power += (int)Suit;
-
-            return power;
-        }
-
-        public string CardName()
+        public string CreateCardName()
         {
             var output = $"{this.Rank} of {this.Suit}";
             return output;
         }
-
         public override string ToString()
         {
-            var output = $"Card name: {CardName()}; Card power: {this.Power()}";
+            var output = $"Card name: {this.CreateCardName()}; Card power: {this.CalculatePower()}";
             return output;
         }
+        //public override bool Equals(object obj)
+        //{
+        //    var other = obj as Card;
+        //    if (other == null)
+        //    {
+        //        return false;
+        //    }
+        //    else if (ReferenceEquals(this, other))
+        //    {
+        //        return true;
+        //    }
+        //    bool areEquals = this.CreateCardName().Equals(other.CreateCardName());
+        //    return areEquals;
+        //}
     }
 }
