@@ -26,7 +26,15 @@ namespace Demo
             {
                 Console.WriteLine(type.Name);
             }
-            
+        }
+
+        //public static List<T> CreateList<T>()
+        //{
+        //    var typeOfGenericList = typeof(List<>);
+        //    var typeOfListOfT = typeOfGenericList.MakeGenericType(typeof(T));
+        //    var output = (List<T>)Activator.CreateInstance(typeOfListOfT);
+        //    return output;
+        //}
                 
             //var parameters = method.GetParameters();
             //foreach (var param in parameters)
@@ -91,6 +99,6 @@ namespace Demo
             //}
 
             //Console.WriteLine(cat.Name);
-        }
     }
 }
+
