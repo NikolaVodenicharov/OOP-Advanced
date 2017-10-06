@@ -52,6 +52,12 @@
     <Compile Include="Contracts\IRunnable.cs" />
     <Compile Include="Contracts\IUnit.cs" />
     <Compile Include="Contracts\IUnitFactory.cs" />
+    <Compile Include="Core\Commands\Add.cs" />
+    <Compile Include="Core\Commands\Command.cs" />
+    <Compile Include="Core\Commands\CommandInterpreter.cs" />
+    <Compile Include="Core\Commands\Fight.cs" />
+    <Compile Include="Core\Commands\Retire.cs" />
+    <Compile Include="Core\Commands\Report.cs" />
     <Compile Include="Core\Engine.cs" />
     <Compile Include="Core\Factories\UnitFactory.cs" />
     <Compile Include="Data\UnitRepository.cs" />
@@ -66,9 +72,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\Commands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
