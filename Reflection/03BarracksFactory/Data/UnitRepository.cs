@@ -20,8 +20,7 @@
                 StringBuilder statBuilder = new StringBuilder();
                 foreach (var entry in amountOfUnits)
                 {
-                    string formatedEntry =
-                            string.Format("{0} -> {1}", entry.Key, entry.Value);
+                    string formatedEntry = string.Format("{0} -> {1}", entry.Key, entry.Value);
                     statBuilder.AppendLine(formatedEntry);
                 }
 

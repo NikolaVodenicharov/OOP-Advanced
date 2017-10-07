@@ -2,18 +2,22 @@
 {
     using System;
     using _03BarracksFactory.Contracts;
+    using Attributes;
 
     public class Retire : Command
     {
-        public Retire(string[] data, IRepository repository, IUnitFactory unitFactory) 
-            : base(data, repository, unitFactory)
+        [Inject]
+        private IRepository repository;
+
+        public Retire(string[] data) 
+            : base(data)
         {
         }
 
         public override string Execute()
         {
             var unitType = this.Data[1];
-            this.Repository.RemoveUnit(unitType);
+            this.repository.RemoveUnit(unitType);
             var output = unitType + " retired!";
             return output;
         }

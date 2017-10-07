@@ -2,19 +2,25 @@
 {
     using System;
     using _03BarracksFactory.Contracts;
+    using Attributes;
 
     public class Add : Command
     {
-        public Add(string[] data, IRepository repository, IUnitFactory unitFactory) 
-            : base(data, repository, unitFactory)
+        [Inject]
+        private IRepository repository;
+        [Inject]
+        private IUnitFactory unitFactory;
+
+        public Add(string[] data) 
+            : base(data)
         {
         }
 
         public override string Execute()
         {
             var unitType = this.Data[1];
-            var unit = this.UnitFactory.CreateUnit(unitType);
-            this.Repository.AddUnit(unit);
+            var unit = this.unitFactory.CreateUnit(unitType);
+            this.repository.AddUnit(unit);
             var output = unitType + " added!";
             return output;
         }

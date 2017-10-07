@@ -2,17 +2,21 @@
 {
     using System;
     using _03BarracksFactory.Contracts;
+    using Attributes;
 
     public class Report : Command
     {
-        public Report(string[] data, IRepository repository, IUnitFactory unitFactory) 
-            : base(data, repository, unitFactory)
+        [Inject]
+        private IRepository repository;
+
+        public Report(string[] data) 
+            : base(data)
         {
         }
 
         public override string Execute()
         {
-            string output = this.Repository.Statistics;
+            string output = this.repository.Statistics;
             return output;
         }
     }
