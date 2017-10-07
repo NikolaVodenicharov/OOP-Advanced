@@ -4,7 +4,8 @@
     using Contracts;
     using System.Collections.Generic;
     using System.Text;
-    class UnitRepository : IRepository
+
+    public class UnitRepository : IRepository
     {
         private IDictionary<string, int> amountOfUnits;
 

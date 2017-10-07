@@ -7,7 +7,7 @@
     using System.Reflection;
     using System.Linq;
 
-    class Engine : IRunnable
+    public class Engine : IRunnable
     {
         private ICommandInterpreter commandInterpreter;
 
