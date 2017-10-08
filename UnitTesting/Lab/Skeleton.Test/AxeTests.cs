@@ -4,7 +4,7 @@
     using System;
 
     [TestFixture]
-    public class AxeTest
+    public class AxeTests
     {
         private const int AxeAtack = 1;
         private const int AxeDurability = 1;

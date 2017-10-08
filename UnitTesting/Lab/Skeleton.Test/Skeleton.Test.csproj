@@ -53,7 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AxeTest.cs" />
+    <Compile Include="AxeTests.cs" />
+    <Compile Include="FakeDummy.cs" />
+    <Compile Include="FakeWeapon.cs" />
     <Compile Include="HeroTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
