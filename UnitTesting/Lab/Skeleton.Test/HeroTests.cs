@@ -23,25 +23,27 @@
 
         }
 
-        //[Test]
-        //public void MockingTest()
-        //{
-        //    //Arange
-        //    var weapon = new Mock<IWeapon>();
-        //    weapon
-        //        .Setup(w => w.Attack(It.IsAny<ITarget>()))
-        //        .Callback(() => weapon.Object.DurabilityPoints -= 1);
-        //    //weapon.Setup(w => w.AttackPoints == 10);
-        //    //weapon.Setup(w => w.DurabilityPoints == 3);
+        [Test]
+        public void MockingTest()
+        {
+            //Arange
+            var weapon = new Mock<IWeapon>();
+            //weapon
+            //    .Setup(w => w.Attack(It.IsAny<ITarget>()))
+            //    .Callback(() => weapon.Object.DurabilityPoints -= 1);
+            //weapon.Setup(w => w.AttackPoints == 10);
+            //weapon.Setup(w => w.DurabilityPoints == 3);
 
-        //    var systemUnderTest = new Hero("John", weapon.Object);
-        //    var target = new Dummy(10, 5);
+            var systemUnderTest = new Hero("John", weapon.Object);
+            var target = new Mock<ITarget>();
+            target.Setup(t => t.IsDead()).Returns(true);
+            target.Setup(t => t.GiveExperience()).Returns(5);
 
-        //    //Act
-        //    systemUnderTest.Attack(target);
+            //Act
+            systemUnderTest.Attack(target.Object);
 
-        //    //Assert
-        //    Assert.AreEqual(5, systemUnderTest.Experience);
-        //}
+            //Assert
+            Assert.AreEqual(5, systemUnderTest.Experience);
+        }
     }
 }
