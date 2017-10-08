@@ -22,6 +22,12 @@
             this.dummy = new Dummy(DummyHealth, DummyExperience);
         }
 
+        [TearDown]
+        public void AfterTest()
+        {
+
+        }
+
         [Test]
         public void AxeLosesDurabilityAfterAtack()
         {

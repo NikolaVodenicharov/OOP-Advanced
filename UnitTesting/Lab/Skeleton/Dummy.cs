@@ -1,19 +1,41 @@
-﻿using System;
+﻿using Skeleton.Interfaces;
+using System;
 
-public class Dummy
+public class Dummy : ITarget
 {
     private int health;
-    private int experience;
+    private int keptExperience;
 
-    public Dummy(int health, int experience)
+    public Dummy(int health, int keptExperience)
     {
-        this.health = health;
-        this.experience = experience;
+        this.Healt = health;
+        this.KeptExperience = keptExperience;
     }
 
-    public int Health 
+    public int Healt
     {
-        get { return this.health; }
+        get
+        {
+            return this.health;
+        }
+
+        set
+        {
+            this.health = value;
+        }
+    }
+
+    public int KeptExperience
+    {
+        get
+        {
+            return this.keptExperience;
+        }
+
+        set
+        {
+            this.keptExperience = value;
+        }
     }
 
     public void TakeAttack(int attackPoints)
@@ -33,11 +55,13 @@ public class Dummy
             throw new InvalidOperationException("Target is not dead.");
         }
 
-        return this.experience;
+        return this.keptExperience;
     }
 
     public bool IsDead()
     {
         return this.health <= 0;
     }
+
+
 }
