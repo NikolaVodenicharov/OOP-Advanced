@@ -20,7 +20,7 @@
         public void ConstructorElementsPropertyInputZeroElementsCollection()
         {
             //Arrange
-            var emptyCollection = CreateIntCollection(0);
+            var emptyCollection = new List<Person>();
 
             //Assert
             Assert.NotNull(new Database(emptyCollection));
@@ -29,35 +29,16 @@
         public void ConstructorElementsPropertyInputOneElementsCollection()
         {
             //Arrange
-            var oneElementCollection = CreateIntCollection(1);
+            var oneElementCollection = new List<Person>() { new Person("123", "John") };
 
             //Assert
             Assert.NotNull(new Database(oneElementCollection));
         }
         [Test]
-        public void ConstructorElementsPropertyInputMaximumElementsCollection()
+        public void ConstructorElementsPropertyInputNullCollection()
         {
             //Arrange
-            var maximumElementsCollection = CreateIntCollection(16);
-            var testingUnit = new Database(maximumElementsCollection);
-
-            //Assert
-            Assert.NotNull(testingUnit);
-        }
-        [Test]
-        public void ConstructorElementsPropertyExceptionInputOvercapacityElementsCollection()
-        {
-            //Arrange
-            var overcapacityElementsCollection = CreateIntCollection(17);
-
-            //Assert
-            Assert.Throws<InvalidOperationException>(() => new Database(overcapacityElementsCollection));
-        }
-        [Test]
-        public void ConstructorElementsPropertyExceptionInputNullCollection()
-        {
-            //Arrange
-            ICollection<int> nullCollection = null;
+            ICollection<Person> nullCollection = null;
 
             //Assert
             Assert.Throws<InvalidOperationException>(() => new Database(nullCollection));
@@ -67,59 +48,79 @@
         public void AddElementInEmpyCapacityCollection()
         {
             //Arrgane
-            var emptyCollection = CreateIntCollection(0);
+            var emptyCollection = new List<Person>();
             var database = new Database(emptyCollection);
 
             //Act
-            database.Add(5);
+            database.Add(new Person("123", "John"));
 
             //Assert
-            Assert.AreEqual(1, database.Numbers.Count);
+            Assert.AreEqual(1, database.Persons.Count);
         }
         [Test]
-        public void AddElementInFullCapacityCollectionException()
+        public void AddElementInFullCapacityCollection()
         {
             //Arrange
-            var fullCollection = CreateIntCollection(16);
+            var fullCollection = CreatePersonCollection(16);
             var database = new Database(fullCollection);
 
             //Assert
             Assert.Throws<InvalidOperationException>(
-                () => database.Add(5)
+                () => database.Add(new Person("123", "John"))
                 , "Cannot add more elements than capacity.");
+        }
+        [Test]
+        public void AddElementWithAlreadyExistingUsername()
+        {
+            //Arrange
+            var oneElementCollection = new List<Person>() { new Person("123", "John") };
+            var database = new Database(oneElementCollection);
+
+            //Assert
+            Assert.Throws<InvalidOperationException>(() => database.Add(new Person("890", "John")));
+        }
+        [Test]
+        public void AddElementWithAlreadyExistingId()
+        {
+            //Arrange
+            var oneElementCollection = new List<Person>() { new Person("123", "John") };
+            var database = new Database(oneElementCollection);
+
+            //Assert
+            Assert.Throws<InvalidOperationException>(() => database.Add(new Person("123", "Michael")));
         }
 
         [Test]
         public void RemoveElementFromFullElementsCollection()
         {
             //Arrange
-            var fullCollection = CreateIntCollection(16);
+            var fullCollection = CreatePersonCollection(16);
             var database = new Database(fullCollection);
 
             //Act
             database.Remove();
 
             //Assert
-            Assert.AreEqual(15, database.Numbers.Count);
+            Assert.AreEqual(15, database.Persons.Count);
         }
         [Test]
         public void RemoveElementFromOneElementCollection()
         {
             //Arrange
-            var oneElementCollection = CreateIntCollection(1);
+            var oneElementCollection = new List<Person>() { new Person("123", "John") };
             var database = new Database(oneElementCollection);
 
             //Act
             database.Remove();
 
             //Assert
-            Assert.AreEqual(0, database.Numbers.Count);
+            Assert.AreEqual(0, database.Persons.Count);
         }
         [Test]
-        public void RemoveElementFromZeroElementsCollectionExeption()
+        public void RemoveElementFromZeroElementsCollection()
         {
             //Arrange
-            var emptyCollection = CreateIntCollection(0);
+            var emptyCollection = new List<Person>();
             var database = new Database(emptyCollection);
 
             //Assert
@@ -127,26 +128,90 @@
         }
 
         [Test]
-        public void FetchReturnCorrectly()
+        public void FindElementByUsername()
         {
             //Arrange
-            var fullCollection = CreateIntCollection(10);
-            var database = new Database(fullCollection);
+            var oneElementCollection = new List<Person>() { new Person("547", "Richard") };
+            var inputPerson = new Person("123", "John");
+            var database = new Database(oneElementCollection);
 
-            //Acrt
-            var output = database.Fetch();
+            //Act
+            database.Add(inputPerson);
+            var findedPerson = database.FindByUsername("John");
 
             //Assert
-            Assert.AreEqual(fullCollection, output);
+            Assert.AreEqual(inputPerson, findedPerson);
+        }
+        [Test]
+        public void FindUnexistingElementByUsername()
+        {
+            //Arrange
+            var oneElementCollection = new List<Person>() { new Person("547", "Richard") };
+            var database = new Database(oneElementCollection);
+
+            //Assert
+            Assert.Throws<InvalidOperationException>(() => database.FindByUsername("Michael"));
+        }
+        [Test]
+        public void FindNullElementByUsername()
+        {
+            //Arrange
+            var oneElementCollection = new List<Person>() { new Person("547", "Charles") };
+            var database = new Database(oneElementCollection);
+
+            //Assert
+            Assert.Throws<ArgumentNullException>(() => database.FindByUsername(null));
+        }
+
+        [Test]
+        public void FindElementById()
+        {
+            //Arrange
+            var oneElementCollection = new List<Person>() { new Person("547", "Richard") };
+            var database = new Database(oneElementCollection);
+            var inputPerson = new Person("123", "John");
+
+            //Act
+            database.Add(inputPerson);
+            var findedPerson = database.FindById("123");
+
+            //Assert
+            Assert.AreEqual(inputPerson, findedPerson);
+        }
+        [Test]
+        public void FindUnexistingElementById()
+        {
+            //Arrange
+            var oneElementCollection = new List<Person>() { new Person("547", "Richard") };
+            var database = new Database(oneElementCollection);
+
+            //Assert
+            Assert.Throws<InvalidOperationException>(() => database.FindById("08384"));
+        }
+        [Test]
+        public void FindNullElementById()
+        {
+            //Arrange
+            var oneElementCollection = new List<Person>() { new Person("547", "Charles") };
+            var database = new Database(oneElementCollection);
+
+            //Assert
+            Assert.Throws<ArgumentOutOfRangeException>(() => database.FindById("-573"));
         }
 
 
-        private ICollection<int> CreateIntCollection(int count)
+        private ICollection<Person> CreatePersonCollection(int count)
         {
-            ICollection<int> collection = new List<int>();
+            var collection = new List<Person>();
+            var random = new Random();
+
             for (int i = 0; i < count; i++)
             {
-                collection.Add(i);
+                var username = "John" + random.Next(1, 1000000);
+                var id = "0000" + random.Next(1, 1000000);
+
+                var person = new Person(username, id);
+                collection.Add(person);
             }
 
             return collection;
