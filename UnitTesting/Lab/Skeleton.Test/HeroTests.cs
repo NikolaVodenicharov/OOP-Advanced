@@ -28,12 +28,6 @@
         {
             //Arange
             var weapon = new Mock<IWeapon>();
-            //weapon
-            //    .Setup(w => w.Attack(It.IsAny<ITarget>()))
-            //    .Callback(() => weapon.Object.DurabilityPoints -= 1);
-            //weapon.Setup(w => w.AttackPoints == 10);
-            //weapon.Setup(w => w.DurabilityPoints == 3);
-
             var systemUnderTest = new Hero("John", weapon.Object);
             var target = new Mock<ITarget>();
             target.Setup(t => t.IsDead()).Returns(true);
