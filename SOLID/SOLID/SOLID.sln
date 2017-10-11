@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteMe", "DeleteMe\DeleteMe.csproj", "{8243A807-30F1-43E6-8E2C-E3E07AC1038A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{720466D7-BEA7-45DD-9E78-AA8C716C23BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8243A807-30F1-43E6-8E2C-E3E07AC1038A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8243A807-30F1-43E6-8E2C-E3E07AC1038A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8243A807-30F1-43E6-8E2C-E3E07AC1038A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8243A807-30F1-43E6-8E2C-E3E07AC1038A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{720466D7-BEA7-45DD-9E78-AA8C716C23BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720466D7-BEA7-45DD-9E78-AA8C716C23BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720466D7-BEA7-45DD-9E78-AA8C716C23BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720466D7-BEA7-45DD-9E78-AA8C716C23BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
