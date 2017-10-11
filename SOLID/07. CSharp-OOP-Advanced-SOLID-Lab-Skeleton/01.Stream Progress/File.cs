@@ -1,6 +1,8 @@
 ﻿namespace _01.Stream_Progress
 {
-    public class File
+    using _01.Stream_Progress.Interfaces;
+
+    public class File : IStream
     {
         private string name;
 

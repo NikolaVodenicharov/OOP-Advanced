@@ -6,7 +6,6 @@
     {
         private IStream stream;
 
-        // If we want to stream a music file, we can't
         public StreamProgressInfo(IStream stream)
         {
             this.stream = stream;

@@ -1,6 +1,8 @@
 ﻿namespace _01.Stream_Progress
 {
-    public class Music
+    using _01.Stream_Progress.Interfaces;
+
+    public class Music : IStream
     {
         private string artist;
         private string album;
