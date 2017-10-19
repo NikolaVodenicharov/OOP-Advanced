@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleReader.cs" />
+    <Compile Include="Interfaces\IKillable.cs" />
+    <Compile Include="IO\ConsoleReader.cs" />
+    <Compile Include="IO\ConsoleWriter.cs" />
+    <Compile Include="Core\Engine.cs" />
     <Compile Include="Interfaces\IServant.cs" />
+    <Compile Include="Interfaces\IWrite.cs" />
     <Compile Include="Models\Footman.cs" />
     <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Interfaces\IReader.cs" />

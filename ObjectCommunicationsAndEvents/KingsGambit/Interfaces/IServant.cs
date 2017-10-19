@@ -2,8 +2,8 @@
 {
     using System;
 
-    public interface IServant : IPerson
+    public interface IServant : IPerson, IKillable
     {
-        void SubscribeKingUnderAttack(object sender, EventArgs e);
+        void OnKingUnderAttack(object sender, EventArgs e);
     }
 }

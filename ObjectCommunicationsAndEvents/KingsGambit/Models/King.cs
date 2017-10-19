@@ -35,7 +35,6 @@
             {
                 this.KingUnderAttack(this, null);
             }
-
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace KingsGambit
+﻿namespace KingsGambit.IO
 {
     using Interfaces;
     using System;

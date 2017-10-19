@@ -2,6 +2,6 @@
 {
     public interface IPerson
     {
-        string Name { get; set; }
+        string Name { get; }
     }
 }
