@@ -46,13 +46,17 @@
     <Compile Include="BusinessLayer\Attributes\BurnableGarbageAttribute.cs" />
     <Compile Include="BusinessLayer\Attributes\RecyclableGarbageAttribute.cs" />
     <Compile Include="BusinessLayer\Attributes\StorableGarbageAttribute.cs" />
+    <Compile Include="BusinessLayer\Contracts\Core\IRecyclingManagementRequirement.cs" />
     <Compile Include="BusinessLayer\Contracts\Core\IRecyclingManager.cs" />
+    <Compile Include="BusinessLayer\Contracts\Data\IStoredData.cs" />
     <Compile Include="BusinessLayer\Contracts\Factories\IGarbageFactory.cs" />
     <Compile Include="BusinessLayer\Contracts\IO\IReader.cs" />
     <Compile Include="BusinessLayer\Contracts\IO\IWriter.cs" />
     <Compile Include="BusinessLayer\Core\Engine.cs" />
+    <Compile Include="BusinessLayer\Core\RecyclingManagementRequirement.cs" />
     <Compile Include="BusinessLayer\Core\RecyclingManager.cs" />
     <Compile Include="BusinessLayer\Data\ProcessingData.cs" />
+    <Compile Include="BusinessLayer\Data\StoredData.cs" />
     <Compile Include="BusinessLayer\Entities\BurnableGarbage.cs" />
     <Compile Include="BusinessLayer\Entities\Garbage.cs" />
     <Compile Include="BusinessLayer\Entities\RecyclableGarbage.cs" />

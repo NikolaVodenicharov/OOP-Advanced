@@ -5,7 +5,6 @@
 
     public interface IGarbageFactory
     {
-
         IWaste CreateGarbage(string name, double weight, double volumePerKg, string type);
     }
 }
